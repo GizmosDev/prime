@@ -1,0 +1,31 @@
+---
+name: prime
+description: >-
+  A library of useful, reusable, methods and extensions for Dart.
+
+  See also `flutter_prime` for Flutter apps.
+
+# Contact Info
+homepage: https://gizmos.dev/
+repository: https://github.com/GizmosDev/prime
+issue_tracker: https://github.com/GizmosDev/prime/issues
+
+version: 0.0.1-alpha.1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  intl: ^0.17.0
+  characters: ^1.2.1
+
+dev_dependencies:
+  # Linting
+  lints: ^2.0.0
+
+  # Building
+  dependency_validator: ^3.2.2
+
+  # Testing
+  test: ^1.16.0
+  coverage: ^1.6.1
