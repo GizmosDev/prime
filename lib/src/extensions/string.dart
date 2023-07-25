@@ -303,3 +303,17 @@ extension StringPrime on String {
     }
   }
 }
+
+extension IterableStringPrime on Iterable<String> {
+  /// A quick way to filter out any empty [String]'s from an [Iterable] collection.
+  ///
+  /// Returns an [Iterable] collection of [String] that consists of all the values in the original that are not empty.
+  Iterable<String> whereNotEmpty() => where((value) => value.isNotEmpty);
+}
+
+extension IterableOptionalStringPrime on Iterable<String?> {
+  /// A quick way to filter out any empty or `null` [String]'s from an [Iterable] collection.
+  ///
+  /// Returns an [Iterable] collection of [String]? that consists of all the values in the original that are not empty or `null`.
+  Iterable<String?> whereNotEmpty() => where((value) => value?.isNotEmpty ?? false);
+}

@@ -393,4 +393,54 @@ void main() {
       expect('0000:0000:0001:0000:0000:0001:0000:0000'.shortenedIPv6Address(), '::1:0:0:1:0:0');
     });
   });
+
+  group('IterableStringPrime Tests', () {
+    setUp(() {});
+
+    test('IterableStringPrime.whereNotEmpty()', () {
+      final list = List<String>.empty(growable: true);
+
+      expect(list.whereNotEmpty(), []);
+
+      list.add('');
+      expect(list.whereNotEmpty(), []);
+
+      list.add('Test');
+      expect(list.whereNotEmpty(), ['Test']);
+
+      list.add('');
+      expect(list.whereNotEmpty(), ['Test']);
+
+      list.add('Test 2');
+      expect(list.whereNotEmpty(), ['Test', 'Test 2']);
+    });
+  });
+
+  group('IterableOptionalStringPrime Tests', () {
+    setUp(() {});
+
+    test('IterableOptionalStringPrime.whereNotEmpty()', () {
+      final list = List<String?>.empty(growable: true);
+
+      expect(list.whereNotEmpty(), []);
+
+      list.add('');
+      expect(list.whereNotEmpty(), []);
+
+      list.add(null);
+      expect(list.whereNotEmpty(), []);
+
+      list.add('Test');
+      expect(list.whereNotEmpty(), ['Test']);
+
+      list.add('');
+      expect(list.whereNotEmpty(), ['Test']);
+
+      list.add(null);
+      expect(list.whereNotEmpty(), ['Test']);
+
+      list.add('Test 2');
+      expect(list.whereNotEmpty(), ['Test', 'Test 2']);
+    });
+  });
 }
