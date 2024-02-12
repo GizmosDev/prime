@@ -25,3 +25,20 @@
 
   * `IterableOptionalStringPrime`:
     * `whereNotEmpty`: Instance method that returns all non-empty values in the source collection.
+
+## 0.0.1-alpha.4
+
+### Notes:
+  * Added default values to the `parseOrDefault` `defaultValue` parameters.
+  * Renamed the `build.sh` script to `prebuild.sh` to be more accurate.
+  
+### Additions:
+
+#### Extensions:
+  * `IntPrime`:
+    * `parseOrNull`: Static method that parses the given input to an `int` if possible, otherwise returns `null`.
+    * `parseOrDefault`: Static method that parses the given input to an `int` if possible, otherwise returns `defaultValue`.
+
+  * `DoublePrime`:
+    * `parseOrNull`: Static method that parses the given input to a `double` if possible, otherwise returns `null`.
+    * `parseOrDefault`: Static method that parses the given input to a `double` if possible, otherwise returns `defaultValue`.
