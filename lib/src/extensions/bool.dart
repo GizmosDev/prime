@@ -24,11 +24,11 @@ extension BoolPrime on bool {
     }
 
     if (input is String) {
-      if (['f', 'false', '0'].contains(input.toLowerCase())) {
+      if (['f', 'false', '0'].contains(input.trim().toLowerCase())) {
         return false;
       }
 
-      if (['t', 'true', '1'].contains(input.toLowerCase())) {
+      if (['t', 'true', '1'].contains(input.trim().toLowerCase())) {
         return true;
       }
     }
