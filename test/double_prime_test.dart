@@ -6,6 +6,87 @@ void main() {
   group('DoublePrime Tests', () {
     setUp(() {});
 
+    test('DoublePrime.parseOrNull()', () {
+      expect(DoublePrime.parseOrNull(null), null);
+
+      expect(DoublePrime.parseOrNull(-1), -1);
+      expect(DoublePrime.parseOrNull(0), 0);
+      expect(DoublePrime.parseOrNull(1), 1);
+
+      expect(DoublePrime.parseOrNull(-1.9), -1.9);
+      expect(DoublePrime.parseOrNull(-0.9), -0.9);
+      expect(DoublePrime.parseOrNull(-0.1), -0.1);
+      expect(DoublePrime.parseOrNull(-0.0), 0);
+      expect(DoublePrime.parseOrNull(0.0), 0);
+      expect(DoublePrime.parseOrNull(0.1), 0.1);
+      expect(DoublePrime.parseOrNull(0.9), 0.9);
+      expect(DoublePrime.parseOrNull(1.9), 1.9);
+
+      expect(DoublePrime.parseOrNull('-1.9'), -1.9);
+      expect(DoublePrime.parseOrNull('-0.9'), -0.9);
+      expect(DoublePrime.parseOrNull('-0.1'), -0.1);
+      expect(DoublePrime.parseOrNull('-0.0'), 0);
+      expect(DoublePrime.parseOrNull('0.0'), 0);
+      expect(DoublePrime.parseOrNull('0.1'), 0.1);
+      expect(DoublePrime.parseOrNull('0.9'), 0.9);
+      expect(DoublePrime.parseOrNull('1.9'), 1.9);
+
+      expect(DoublePrime.parseOrNull('null'), null);
+      expect(DoublePrime.parseOrNull('zero'), null);
+      expect(DoublePrime.parseOrNull('one'), null);
+      expect(DoublePrime.parseOrNull('dave'), null);
+      expect(DoublePrime.parseOrNull(''), null);
+      expect(DoublePrime.parseOrNull(' '), null);
+      expect(DoublePrime.parseOrNull('\t'), null);
+      expect(DoublePrime.parseOrNull('\n'), null);
+      expect(DoublePrime.parseOrNull('\r\n'), null);
+      expect(DoublePrime.parseOrNull('hello world.'), null);
+      expect(DoublePrime.parseOrNull('0x01'), null);
+    });
+
+    test('DoublePrime.parseOrDefault()', () {
+      expect(DoublePrime.parseOrDefault(null, defaultValue: 99), 99);
+
+      expect(DoublePrime.parseOrDefault(-1, defaultValue: 99), -1);
+      expect(DoublePrime.parseOrDefault(0, defaultValue: 99), 0);
+      expect(DoublePrime.parseOrDefault(1, defaultValue: 99), 1);
+
+      expect(DoublePrime.parseOrDefault(-1.9, defaultValue: 99), -1.9);
+      expect(DoublePrime.parseOrDefault(-0.9, defaultValue: 99), -0.9);
+      expect(DoublePrime.parseOrDefault(-0.1, defaultValue: 99), -0.1);
+      expect(DoublePrime.parseOrDefault(-0.0, defaultValue: 99), 0);
+      expect(DoublePrime.parseOrDefault(0.0, defaultValue: 99), 0);
+      expect(DoublePrime.parseOrDefault(0.1, defaultValue: 99), 0.1);
+      expect(DoublePrime.parseOrDefault(0.9, defaultValue: 99), 0.9);
+      expect(DoublePrime.parseOrDefault(1.9, defaultValue: 99), 1.9);
+
+      expect(DoublePrime.parseOrDefault('-1.9', defaultValue: 99), -1.9);
+      expect(DoublePrime.parseOrDefault('-0.9', defaultValue: 99), -0.9);
+      expect(DoublePrime.parseOrDefault('-0.1', defaultValue: 99), -0.1);
+      expect(DoublePrime.parseOrDefault('-0.0', defaultValue: 99), 0);
+      expect(DoublePrime.parseOrDefault('0.0', defaultValue: 99), 0);
+      expect(DoublePrime.parseOrDefault('0.1', defaultValue: 99), 0.1);
+      expect(DoublePrime.parseOrDefault('0.9', defaultValue: 99), 0.9);
+      expect(DoublePrime.parseOrDefault('1.9', defaultValue: 99), 1.9);
+
+      expect(DoublePrime.parseOrDefault('null', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('zero', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('one', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('dave', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault(' ', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('\t', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('\n', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('\r\n', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('hello world.', defaultValue: 99), 99);
+      expect(DoublePrime.parseOrDefault('0x01', defaultValue: 99), 99);
+
+      expect(DoublePrime.parseOrDefault(null), 0);
+      expect(DoublePrime.parseOrDefault('null'), 0);
+      expect(DoublePrime.parseOrDefault(1), 1);
+      expect(DoublePrime.parseOrDefault(1.9), 1.9);
+    });
+
     test('DoublePrime.pluralize()', () {
       expect((0.0).pluralize('thing', 'things'), '0.00 things');
       expect((1.0).pluralize('thing', 'things'), '1.00 thing');
