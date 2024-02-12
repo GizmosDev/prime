@@ -5,7 +5,7 @@ import 'package:prime/prime.dart';
 
 extension BoolPrime on bool {
   /// Convert `input` to a [bool] if possible, otherwise return `defaultValue`.
-  static bool parseOrDefault(dynamic input, {required bool defaultValue}) {
+  static bool parseOrDefault(dynamic input, {bool defaultValue = false}) {
     return parseOrNull(input) ?? defaultValue;
   }
 
