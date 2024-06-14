@@ -42,3 +42,14 @@
   * `DoublePrime`:
     * `parseOrNull`: Static method that parses the given input to a `double` if possible, otherwise returns `null`.
     * `parseOrDefault`: Static method that parses the given input to a `double` if possible, otherwise returns `defaultValue`.
+
+## 0.0.1-alpha.5
+
+### Notes:
+  * Bumped dependency on `intl` to `0.19.0`
+
+### Additions:
+
+#### Extensions:
+  * `ListPrime`:
+    * `containsAny`: A class method to check if a `List<E>` includes any elements of another `List<E>`.
