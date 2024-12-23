@@ -21,7 +21,7 @@ dependencies:
 
 dev_dependencies:
   # Linting
-  lints: ^4.0.0
+  lints: ">=4.0.0 <6.0.0"
 
   # Building
   dependency_validator: ^4.1.0
