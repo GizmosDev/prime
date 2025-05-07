@@ -53,3 +53,14 @@
 #### Extensions:
   * `ListPrime`:
     * `containsAny`: A class method to check if a `List<E>` includes any elements of another `List<E>`.
+
+
+## 0.1.0-alpha.6
+
+### Notes:
+  * Bumped sdk requirements to `>=3.6.0 <4.0.0`
+  * Bumped dependency on `intl` to `0.20.1`
+
+### Additions:
+
+#### Extensions:
