@@ -10,22 +10,22 @@ homepage: https://gizmos.dev/
 repository: https://github.com/GizmosDev/prime
 issue_tracker: https://github.com/GizmosDev/prime/issues
 
-version: 0.0.1-alpha.5
+version: 0.1.0-alpha.6
 
 environment:
-  sdk: ">=2.18.0 <4.0.0"
+  sdk: ">=3.6.0 <4.0.0"
 
 dependencies:
-  intl: ^0.19.0
-  characters: ^1.2.1
+  intl: ^0.20.1
+  characters: ^1.4.0
 
 dev_dependencies:
   # Linting
-  lints: ^4.0.0
+  lints: ^5.1.0
 
   # Building
-  dependency_validator: ^4.1.0
+  dependency_validator: ^5.0.2
 
   # Testing
-  test: ^1.16.0
-  coverage: ^1.6.1
+  test: ^1.25.13
+  coverage: ^1.11.1
