@@ -1,7 +1,9 @@
-BSD-3-Clause License
+# The 3-Clause BSD License
+<!-- SPDX short identifier: BSD-3-Clause -->
+<!-- https://opensource.org/licenses/BSD-3-Clause -->
 
-Copyright 2022-2024, Dave Wood.
-All rights reserved.
+_Copyright © `2020-2025`, `Dave Wood`_  
+_All rights reserved._
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
