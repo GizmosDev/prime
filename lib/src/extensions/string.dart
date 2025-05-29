@@ -1,4 +1,4 @@
-library prime;
+library;
 
 import 'dart:io';
 import 'dart:math';

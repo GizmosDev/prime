@@ -124,14 +124,13 @@ function makeImports {
 	TEMPFILE=$(mktemp /tmp/${PACKAGE_NAME}_makeImports.XXXXXX)
 
 	echo "// GENERATED CODE - DO NOT MODIFY BY HAND" >> "${TEMPFILE}"
-	echo "library ${PACKAGE_NAME};" >> "${TEMPFILE}"
+	echo "library;" >> "${TEMPFILE}"
 	echo "" >> "${TEMPFILE}"
 
 	cd "${LIB_DIR}"
 	for DART_FILE in `"${FIND}" "${SRC}" -name "*.dart" | "${SORT}"` ; do
 		echo "export '${DART_FILE}';" >> "${TEMPFILE}"
 	done;
-	echo "" >> "${TEMPFILE}"
 
 	debugCat "${TEMPFILE}"
 	"${CAT}" "${TEMPFILE}" > "${IMPORT_FILE}"

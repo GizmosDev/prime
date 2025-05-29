@@ -1,4 +1,3 @@
-library prime;
 
 import 'dart:collection';
 

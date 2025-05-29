@@ -1,4 +1,4 @@
-library prime;
+library;
 
 import 'package:intl/intl.dart';
 

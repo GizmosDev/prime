@@ -1,4 +1,4 @@
-library prime;
+library;
 
 // ignore: unused_import
 import 'package:prime/prime.dart';
