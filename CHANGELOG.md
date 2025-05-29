@@ -64,3 +64,14 @@
 ### Additions:
 
 #### Extensions:
+
+
+## 0.2.0
+
+### Notes:
+  * Bumped dependencies
+  * Dropped `-alpha` pre-release tag in the version number
+
+### Additions:
+
+#### Extensions:
