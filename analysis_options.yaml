@@ -3,17 +3,14 @@ include: package:lints/recommended.yaml
 
 linter:
   rules:
-    # - camel_case_types
+    camel_case_types: true
+    cancel_subscriptions: true
     prefer_single_quotes: true
-    library_private_types_in_public_api: false
 
 analyzer:
-  exclude:
-    - build/**
+  exclude: [build/**]
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
   errors:
-    todo: ignore
-# For more information about the core and recommended set of lints, see
-# https://dart.dev/go/core-lints
-
-# For additional information about configuring this file, see
-# https://dart.dev/guides/language/analysis-options
+    todo: warning
