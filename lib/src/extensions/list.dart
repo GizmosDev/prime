@@ -1,3 +1,4 @@
+library;
 
 import 'dart:collection';
 
@@ -5,7 +6,7 @@ import 'dart:collection';
 import 'package:prime/prime.dart';
 
 extension ListPrime<E> on List<E> {
-  /// A [List]<E> containing the unique items from `this`.
+  /// A `[List]<E>` containing the unique items from `this`.
   /// i.e.: If `this` has any duplicate items, only one will be in the
   /// `uniqueList`
   List<E> get uniqueList {
