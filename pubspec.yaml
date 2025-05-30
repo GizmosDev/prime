@@ -23,9 +23,6 @@ dev_dependencies:
   # Linting
   lints: ^6.0.0
 
-  # Building
-  dependency_validator: ^5.0.2
-
   # Testing
   test: ^1.26.2
   coverage: ^1.14.0
