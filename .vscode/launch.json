@@ -1,12 +1,12 @@
 {
     "version": "0.2.0",
-    "configurations": [{
+    "configurations": [
+        {
             "name": "Prime Example - Dev",
             "request": "launch",
             "type": "dart",
             "program": "example/prime.dart",
-            "args": [
-            ],
+            "args": [],
         },
     ]
 }

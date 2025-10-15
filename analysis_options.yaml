@@ -14,3 +14,7 @@ analyzer:
     implicit-dynamic: false
   errors:
     todo: warning
+
+formatter:
+  page_width: 160
+  trailing_commas: preserve
