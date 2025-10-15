@@ -292,16 +292,16 @@ void main() {
       expect('zzzz:0aa0::abcd:00db:1234'.isIPv6Address(), false);
 
       expect('0000:0000:0000:0000:0000:0000:0000:0000'.isIPv6Address(), true);
-      expect('00000:0000:0000:0000:0000:0000:0000:0000'.isIPv6Address(), true);
-      expect('00000:00000:00000:00000:00000:00000:00000:00000'.isIPv6Address(), true);
+      expect('00000:0000:0000:0000:0000:0000:0000:0000'.isIPv6Address(), false);
+      expect('00000:00000:00000:00000:00000:00000:00000:00000'.isIPv6Address(), false);
       expect('ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.isIPv6Address(), true);
       expect('fffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.isIPv6Address(), false);
-      expect('0ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.isIPv6Address(), true);
+      expect('0ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.isIPv6Address(), false);
       expect('ffff:0aa0::abcd:00db:1234'.isIPv6Address(), true);
 
       expect('fe80::'.isIPv6Address(), true);
       expect('fe80::%18'.isIPv6Address(), true);
-      expect('fe80::%abc0134456789ab'.isIPv6Address(), true);
+      expect('fe80::%abc0134456789ab'.isIPv6Address(), false);
     });
 
     test('StringPrime.expandedIPv6Address()', () {
@@ -332,16 +332,16 @@ void main() {
       expect('zzzz:0aa0::abcd:00db:1234'.expandedIPv6Address(), null);
 
       expect('0000:0000:0000:0000:0000:0000:0000:0000'.expandedIPv6Address(), '0000:0000:0000:0000:0000:0000:0000:0000');
-      expect('00000:0000:0000:0000:0000:0000:0000:0000'.expandedIPv6Address(), '0000:0000:0000:0000:0000:0000:0000:0000');
-      expect('00000:00000:00000:00000:00000:00000:00000:00000'.expandedIPv6Address(), '0000:0000:0000:0000:0000:0000:0000:0000');
+      expect('00000:0000:0000:0000:0000:0000:0000:0000'.expandedIPv6Address(), null);
+      expect('00000:00000:00000:00000:00000:00000:00000:00000'.expandedIPv6Address(), null);
       expect('ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.expandedIPv6Address(), 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff');
       expect('fffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.expandedIPv6Address(), null);
-      expect('0ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.expandedIPv6Address(), 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff');
+      expect('0ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.expandedIPv6Address(), null);
       expect('ffff:0aa0::abcd:00db:1234'.expandedIPv6Address(), 'ffff:0aa0:0000:0000:0000:abcd:00db:1234');
 
       expect('fe80::'.expandedIPv6Address(), 'fe80:0000:0000:0000:0000:0000:0000:0000');
       expect('fe80::%18'.expandedIPv6Address(), 'fe80:0000:0000:0000:0000:0000:0000:0000');
-      expect('fe80::%abc0134456789ab'.expandedIPv6Address(), 'fe80:0000:0000:0000:0000:0000:0000:0000');
+      expect('fe80::%abc0134456789ab'.expandedIPv6Address(), null);
     });
 
     test('StringPrime.shortenedIPv6Address()', () {
@@ -376,16 +376,16 @@ void main() {
       expect('zzzz:0aa0::abcd:00db:1234'.shortenedIPv6Address(), null);
 
       expect('0000:0000:0000:0000:0000:0000:0000:0000'.shortenedIPv6Address(), '::');
-      expect('00000:0000:0000:0000:0000:0000:0000:0000'.shortenedIPv6Address(), '::');
-      expect('00000:00000:00000:00000:00000:00000:00000:00000'.shortenedIPv6Address(), '::');
+      expect('00000:0000:0000:0000:0000:0000:0000:0000'.shortenedIPv6Address(), null);
+      expect('00000:00000:00000:00000:00000:00000:00000:00000'.shortenedIPv6Address(), null);
       expect('ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.shortenedIPv6Address(), 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff');
       expect('fffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.shortenedIPv6Address(), null);
-      expect('0ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.shortenedIPv6Address(), 'ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff');
+      expect('0ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'.shortenedIPv6Address(), null);
       expect('ffff:0aa0::abcd:00db:1234'.shortenedIPv6Address(), 'ffff:aa0::abcd:db:1234');
 
       expect('fe80::'.shortenedIPv6Address(), 'fe80::');
       expect('fe80::%18'.shortenedIPv6Address(), 'fe80::');
-      expect('fe80::%abc0134456789ab'.shortenedIPv6Address(), 'fe80::');
+      expect('fe80::%abc0134456789ab'.shortenedIPv6Address(), null);
 
       expect('0000:0000:0001:0000:0000:0000:0000:0000'.shortenedIPv6Address(), '0:0:1::');
       expect('0000:0000:0000:0000:0000:0001:0000:0000'.shortenedIPv6Address(), '::1:0:0');
