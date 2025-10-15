@@ -75,3 +75,14 @@
 ### Additions:
 
 #### Extensions:
+
+
+## 0.3.0
+
+### Notes:
+  * Bumped dependencies
+  * Bumped sdk requirements to `>=3.8.0 <4.0.0`
+
+### Additions:
+
+#### Extensions:
